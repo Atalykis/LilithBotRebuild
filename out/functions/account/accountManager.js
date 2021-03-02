@@ -7,11 +7,11 @@ class AccountManager {
     addAccount(account) {
         this.accounts.push(account);
     }
-    findAccount(username) {
-        return this.accounts.find(element => element.username === username);
+    findAccount(userid) {
+        return this.accounts.find(element => element.id === userid);
     }
     createAccount(account) {
-        if (this.findAccount(account.username)) {
+        if (this.findAccount(account.id)) {
             return false;
         }
         else {

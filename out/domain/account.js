@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Account = void 0;
 class Account {
     constructor(id, cash = 0) {
         this.id = id;
@@ -12,4 +13,4 @@ class Account {
         this.cash -= x;
     }
 }
-exports.default = Account;
+exports.Account = Account;

@@ -27,7 +27,7 @@ const accountCommands_1 = __importDefault(require("./accountCommands"));
 const accountManager_1 = __importDefault(require("../account/accountManager"));
 const casinoCommands_1 = __importDefault(require("./casinoCommands"));
 class CommandHandler {
-    constructor(casino) {
+    constructor() {
         this.accountManager = new accountManager_1.default();
         this.casinoCommand = new casinoCommands_1.default(this.accountManager);
         this.accountCommand = new accountCommands_1.default(this.accountManager);
@@ -46,6 +46,7 @@ class CommandHandler {
                 message.reply("Wouaf Wouaf ! :dog:");
                 break;
             case "createAccount":
+            case "createaccount":
                 this.accountCommand.createAccount(message);
                 break;
             case "cash":
@@ -53,6 +54,9 @@ class CommandHandler {
                 break;
             case "doubleOrNothing":
                 this.casinoCommand.doubleOrNothing(message, parseInt(args[0]));
+                break;
+            case "deathRoulette":
+                this.casinoCommand.deathRoulette(message, parseInt(args[0]), parseInt(args[1]));
                 break;
             default:
                 this.unknown(message);

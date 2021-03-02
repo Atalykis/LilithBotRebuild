@@ -23,12 +23,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Discord = __importStar(require("discord.js"));
-const casino_1 = __importDefault(require("./functions/casino/casino"));
+const dotenv = __importStar(require("dotenv"));
 const commandHandler_1 = __importDefault(require("./functions/commandManager/commandHandler"));
 const bot = new Discord.Client();
-const token = "ODE1OTE3NDY3MjY4NDE1NTU4.YDzYWw.Asc2-nWUCSPhpdfa9FgBJrK3anE";
-const casino = new casino_1.default();
-const commandHandler = new commandHandler_1.default(casino);
+const token = "";
+const commandHandler = new commandHandler_1.default();
+dotenv.config({ path: '${__dirname}../.env' });
 bot.on('ready', function () {
     console.log("Je suis connecté !");
 });

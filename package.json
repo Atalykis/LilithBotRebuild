@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "@types/dotenv": "^8.2.0",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "typescript": "^4.2.2"

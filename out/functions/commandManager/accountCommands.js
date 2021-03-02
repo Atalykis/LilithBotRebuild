@@ -51,7 +51,7 @@ class AccountCommand {
             .setThumbnail('https://i.ibb.co/TgzRW2y/IMG-20201124-121326.jpg')
             .setTimestamp();
         if (user) {
-            answer.addField("\u200B", "<@!" + user.username + ">" + " You have " + user.cash + "$", true);
+            answer.addField("\u200B", "<@!" + user.id + ">" + " You have " + user.cash + "$", true);
         }
         else {
             answer.addField("Error", "You don't have any account :c ; try creating one with §createAccount", true)
