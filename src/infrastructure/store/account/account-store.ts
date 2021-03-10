@@ -1,4 +1,4 @@
-import { Account } from '../../../domain/account'
+import { Account } from '../../../domain/account/account'
 
 export interface AccountStore {
   load(userId: string): Account | undefined

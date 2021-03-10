@@ -1,32 +1,32 @@
-import { Intent } from '../../shared/intent'
+import { Command } from '../../infrastructure/messager/shared/command'
 import { AccountService } from './account.service'
-import { Controller } from '../../shared/controller'
 
+import { AccountCreatedMessageOut, AccountBalanceMessageOut } from '../../domain/account/messages'
 
-export class AccountController extends Controller {
+export class AccountController {
 
-  constructor(private readonly accountService: AccountService) {
-    super();
-  }
-
+  constructor(private readonly accountService: AccountService) {}
   
-  createAccount(intent: Intent) {
+  createAccount(command: Command) {
     try {
-      const userId = intent.getUserId()
-
+      const userId = command.getUserId()
       this.accountService.createAccount(userId)
+      return new AccountCreatedMessageOut(userId)
     } catch (error) {
       throw new Error(`could not create account : ${error.message}`)
     }
   }
 
-  getCash(intent: Intent) {
+  
+  cash(command: Command) {
     try {
-      const userId = intent.getUserId()
-
-      this.accountService.getCash(userId)
+      const userId = command.getUserId()
+      const cash = this.accountService.getCash(userId)
+      return new AccountBalanceMessageOut(userId, cash)
     } catch (error) {
       throw new Error(`could not retrieve cash : ${error.message}`)
     }
   }
 }
+
+

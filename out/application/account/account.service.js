@@ -11,7 +11,7 @@ class AccountService {
         if (existingAccount) {
             throw new Error(`account for ${userId} already exist`);
         }
-        const account = new account_1.Account(userId, 10);
+        const account = new account_1.Account(userId, 100000);
         this.accountStore.save(account);
     }
     getCash(userId) {

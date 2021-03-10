@@ -12,5 +12,8 @@ class Account {
     removeCash(x) {
         this.cash -= x;
     }
+    getCash() {
+        return this.cash;
+    }
 }
 exports.Account = Account;

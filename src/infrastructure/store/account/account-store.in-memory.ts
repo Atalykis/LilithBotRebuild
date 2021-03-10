@@ -1,4 +1,4 @@
-import { Account } from '../../../domain/account'
+import { Account } from '../../../domain/account/account'
 import { AccountStore } from './account-store'
 
 export class AccountStoreInMemory implements AccountStore {

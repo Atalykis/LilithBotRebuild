@@ -1,5 +1,5 @@
 import { AccountStore } from '../../infrastructure/store/account/account-store'
-import { Account } from '../../domain/account'
+import { Account } from '../../domain/account/account'
 
 export class AccountService {
 
@@ -12,7 +12,7 @@ export class AccountService {
       throw new Error(`account for ${userId} already exist`)
     }
 
-    const account = new Account(userId, 10)
+    const account = new Account(userId, 100000)
 
     this.accountStore.save(account)
   }
